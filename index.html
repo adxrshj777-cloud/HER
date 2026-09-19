@@ -248,7 +248,7 @@
   .carousel {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 420px;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 24px;
@@ -270,10 +270,10 @@
     background: #fff;
   }
 
-  /* ⭐ FIXED PHOTO RATIO — no stretching, no weird cropping ⭐ */
+  /* ⭐ 9:11 PORTRAIT PHOTO FRAME ⭐ */
   .slide-photo {
     width: 100%;
-    height: 420px;
+    aspect-ratio: 9 / 11;
     background: linear-gradient(135deg,#ffc0cb,#ff8fab);
     position: relative;
     overflow: hidden;
@@ -284,8 +284,8 @@
   .slide-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;        /* fills frame, crops edges proportionally */
-    object-position: center;  /* keeps the center of the photo */
+    object-fit: cover;
+    object-position: center;
     display: block;
   }
 
@@ -346,7 +346,7 @@
   }
 
   @media (max-width: 500px) {
-    .slide-photo { height: 360px; }
+    .carousel { max-width: 100%; }
     .carousel-btn { width: 36px; height: 36px; font-size: 22px; }
   }
 
@@ -562,7 +562,7 @@
         <!-- SLIDE 1 -->
         <div class="slide">
           <div class="slide-photo">
-            <img src="photo1.jpg" alt="Our first date">
+            <img src="photo1.jpg" alt="Our first date" onerror="this.parentElement.style.background='linear-gradient(135deg,#ffc0cb,#ff8fab)'; this.parentElement.innerHTML='<span style=\'font-size:90px\'>💕</span>';">
           </div>
           <div class="slide-caption">
             <h3>Our First Date, Babyyyy 💕</h3>
@@ -573,7 +573,7 @@
         <!-- SLIDE 2 -->
         <div class="slide">
           <div class="slide-photo">
-            <img src="photo2.jpg" alt="First cheeks kiss">
+            <img src="photo2.jpg" alt="First cheeks kiss" onerror="this.parentElement.style.background='linear-gradient(135deg,#ffc0cb,#ff8fab)'; this.parentElement.innerHTML='<span style=\'font-size:90px\'>🌸</span>';">
           </div>
           <div class="slide-caption">
             <h3>Our First Cheeks Kiss 🌸</h3>
@@ -584,7 +584,7 @@
         <!-- SLIDE 3 -->
         <div class="slide">
           <div class="slide-photo">
-            <img src="photo3.jpg" alt="Cute laugh">
+            <img src="photo3.jpg" alt="Cute laugh" onerror="this.parentElement.style.background='linear-gradient(135deg,#ffc0cb,#ff8fab)'; this.parentElement.innerHTML='<span style=\'font-size:90px\'>✨</span>';">
           </div>
           <div class="slide-caption">
             <h3>Random Perdem Cute Chiri ✨</h3>
@@ -595,7 +595,7 @@
         <!-- SLIDE 4 -->
         <div class="slide">
           <div class="slide-photo">
-            <img src="photo4.jpg" alt="Sunshine and smiles">
+            <img src="photo4.jpg" alt="Sunshine and smiles" onerror="this.parentElement.style.background='linear-gradient(135deg,#ffc0cb,#ff8fab)'; this.parentElement.innerHTML='<span style=\'font-size:90px\'>💐</span>';">
           </div>
           <div class="slide-caption">
             <h3>Sunshine & Smiles 💐</h3>
@@ -606,7 +606,7 @@
         <!-- SLIDE 5 -->
         <div class="slide">
           <div class="slide-photo">
-            <img src="photo5.jpg" alt="With my Shuttumanii">
+            <img src="photo5.jpg" alt="With my Shuttumanii" onerror="this.parentElement.style.background='linear-gradient(135deg,#ffc0cb,#ff8fab)'; this.parentElement.innerHTML='<span style=\'font-size:90px\'>🌷</span>';">
           </div>
           <div class="slide-caption">
             <h3>With My Shuttumanii 🌷</h3>
@@ -617,7 +617,7 @@
         <!-- SLIDE 6 -->
         <div class="slide">
           <div class="slide-photo">
-            <img src="photo6.jpg" alt="Sleeper">
+            <img src="photo6.jpg" alt="Sleeper" onerror="this.parentElement.style.background='linear-gradient(135deg,#ffc0cb,#ff8fab)'; this.parentElement.innerHTML='<span style=\'font-size:90px\'>💖</span>';">
           </div>
           <div class="slide-caption">
             <h3>Sleeper 💖</h3>
