@@ -270,22 +270,22 @@
     background: #fff;
   }
 
+  /* ⭐ FIXED PHOTO RATIO — no stretching, no weird cropping ⭐ */
   .slide-photo {
     width: 100%;
-    height: 380px;
+    height: 420px;
     background: linear-gradient(135deg,#ffc0cb,#ff8fab);
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 90px;
-    color: #fff;
-    position: relative;
-    overflow: hidden;
   }
   .slide-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;        /* fills frame, crops edges proportionally */
+    object-position: center;  /* keeps the center of the photo */
     display: block;
   }
 
@@ -307,7 +307,7 @@
 
   .carousel-btn {
     position: absolute;
-    top: 40%;
+    top: 42%;
     transform: translateY(-50%);
     width: 42px; height: 42px;
     border-radius: 50%;
@@ -346,7 +346,7 @@
   }
 
   @media (max-width: 500px) {
-    .slide-photo { height: 320px; }
+    .slide-photo { height: 360px; }
     .carousel-btn { width: 36px; height: 36px; font-size: 22px; }
   }
 
@@ -562,7 +562,7 @@
         <!-- SLIDE 1 -->
         <div class="slide">
           <div class="slide-photo">
-            <img src="photo1.jpg" alt="Us in the garden">
+            <img src="photo1.jpg" alt="Our first date">
           </div>
           <div class="slide-caption">
             <h3>Our First Date, Babyyyy 💕</h3>
@@ -573,7 +573,7 @@
         <!-- SLIDE 2 -->
         <div class="slide">
           <div class="slide-photo">
-            <img src="photo2.jpg" alt="Black and white selfie">
+            <img src="photo2.jpg" alt="First cheeks kiss">
           </div>
           <div class="slide-caption">
             <h3>Our First Cheeks Kiss 🌸</h3>
@@ -584,7 +584,7 @@
         <!-- SLIDE 3 -->
         <div class="slide">
           <div class="slide-photo">
-            <img src="photo3.jpg" alt="Laughing on the bench">
+            <img src="photo3.jpg" alt="Cute laugh">
           </div>
           <div class="slide-caption">
             <h3>Random Perdem Cute Chiri ✨</h3>
@@ -595,7 +595,7 @@
         <!-- SLIDE 4 -->
         <div class="slide">
           <div class="slide-photo">
-            <img src="photo4.jpg" alt="Close up selfie smiling">
+            <img src="photo4.jpg" alt="Sunshine and smiles">
           </div>
           <div class="slide-caption">
             <h3>Sunshine & Smiles 💐</h3>
@@ -606,7 +606,7 @@
         <!-- SLIDE 5 -->
         <div class="slide">
           <div class="slide-photo">
-            <img src="photo5.jpg" alt="Mirror selfie">
+            <img src="photo5.jpg" alt="With my Shuttumanii">
           </div>
           <div class="slide-caption">
             <h3>With My Shuttumanii 🌷</h3>
@@ -617,7 +617,7 @@
         <!-- SLIDE 6 -->
         <div class="slide">
           <div class="slide-photo">
-            <img src="photo6.jpg" alt="Dinner together">
+            <img src="photo6.jpg" alt="Sleeper">
           </div>
           <div class="slide-caption">
             <h3>Sleeper 💖</h3>
@@ -902,7 +902,6 @@ function slidePrev() {
   updateCarousel();
 }
 
-/* Touch swipe */
 let touchStartX = 0, touchStartY = 0, isSwiping = false;
 if (track) {
   track.addEventListener('touchstart', (e) => {
